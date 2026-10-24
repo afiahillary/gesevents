@@ -1,220 +1,230 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1">
-				<title>Events coming up</title>
-				<link rel="preconnect" href="https://fonts.googleapis.com">
-					<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-						<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-							<style>
-								:root {
-								--bg: #07060c;
-								--card: #14121d;
-								--text: #ffffff;
-								--muted: #a9a5ba;
-								--purple: #7d2ae8;
-								--teal: #00c4cc;
-								--brand: linear-gradient(135deg, #7d2ae8 0%, #4f6bf0 50%, #00c4cc 100%);
-								}
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Events coming up</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--bg: #07060c;
+			--card: #14121d;
+			--text: #ffffff;
+			--muted: #a9a5ba;
+			--purple: #7d2ae8;
+			--teal: #00c4cc;
+			--brand: linear-gradient(135deg, #7d2ae8 0%, #4f6bf0 50%, #00c4cc 100%);
+		}
 
-								* { box-sizing: border-box; }
+		* { box-sizing: border-box; }
 
-								html {
-								scroll-behavior: smooth;
-								background: var(--bg);
-								}
+		html {
+			scroll-behavior: smooth;
+			background: var(--bg);
+		}
 
-								body {
-								margin: 0;
-								min-height: 100vh;
-								color: var(--text);
-								font-family: "Poppins", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-								-webkit-font-smoothing: antialiased;
-								background:
-								radial-gradient(900px 420px at 15% -5%, rgba(125, 42, 232, 0.28), transparent 70%),
-								radial-gradient(800px 400px at 90% 0%, rgba(0, 196, 204, 0.18), transparent 70%),
-								var(--bg);
-								background-repeat: no-repeat;
-								}
+		body {
+			margin: 0;
+			min-height: 100vh;
+			color: var(--text);
+			font-family: "Poppins", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+			-webkit-font-smoothing: antialiased;
+			background:
+				radial-gradient(900px 420px at 15% -5%, rgba(125, 42, 232, 0.28), transparent 70%),
+				radial-gradient(800px 400px at 90% 0%, rgba(0, 196, 204, 0.18), transparent 70%),
+				var(--bg);
+			background-repeat: no-repeat;
+		}
 
-								/* Header */
-								header {
-								max-width: 1200px;
-								margin: 0 auto;
-								padding: 96px 28px 48px;
-								text-align: center;
-								}
+		/* Header */
+		header {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 96px 28px 48px;
+			text-align: center;
+		}
 
-								header h1 {
-								margin: 0 auto 20px;
-								font-size: clamp(2.6rem, 8vw, 5rem);
-								font-weight: 700;
-								letter-spacing: -0.035em;
-								line-height: 1.05;
-								background: var(--brand);
-								-webkit-background-clip: text;
-								background-clip: text;
-								-webkit-text-fill-color: transparent;
-								color: transparent;
-								padding-bottom: 0.08em; 
-								}
+		header h1 {
+			margin: 0 auto 20px;
+			font-size: clamp(2.6rem, 8vw, 5rem);
+			font-weight: 700;
+			letter-spacing: -0.035em;
+			line-height: 1.05;
+			background: var(--brand);
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			color: transparent;
+			padding-bottom: 0.08em;
+		}
 
-								header p {
-								margin: 0 auto;
-								max-width: 38ch;
-								color: #cfcbe0;
-								font-size: clamp(1rem, 2.4vw, 1.2rem);
-								font-weight: 400;
-								line-height: 1.6;
-								}
+		header p {
+			margin: 0 auto;
+			max-width: 38ch;
+			color: #cfcbe0;
+			font-size: clamp(1rem, 2.4vw, 1.2rem);
+			font-weight: 400;
+			line-height: 1.6;
+		}
 
-								header::after {
-								content: "";
-								display: block;
-								width: 72px;
-								height: 5px;
-								margin: 32px auto 0;
-								border-radius: 999px;
-								background: var(--brand);
-								}
+		header::after {
+			content: "";
+			display: block;
+			width: 72px;
+			height: 5px;
+			margin: 32px auto 0;
+			border-radius: 999px;
+			background: var(--brand);
+		}
 
-								.flyers {
-								max-width: 1200px;
-								margin: 0 auto;
-								padding: 20px 28px 120px;
-								column-width: 250px;
-								column-gap: 28px;
-								}
+		.flyers {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 20px 28px 120px;
+			column-width: 250px;
+			column-gap: 28px;
+		}
 
-								.flyer {
-								display: block;
-								margin: 0 0 28px;
-								break-inside: avoid;
-								border-radius: 18px;
-								overflow: hidden;
-								background: var(--card);
-								position: relative;
-								z-index: 1;
-								box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
-								color: inherit;
-								text-decoration: none;
+		.flyer {
+			display: block;
+			margin: 0 0 28px;
+			break-inside: avoid;
+			border-radius: 18px;
+			overflow: hidden;
+			background: var(--card);
+			position: relative;
+			z-index: 1;
+			box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+			color: inherit;
+			text-decoration: none;
 
-								opacity: 0;
-								transform: translateY(24px) scale(1);
-								transition:
-								opacity 0.6s ease,
-								transform 0.3s cubic-bezier(.2,.7,.2,1),
-								box-shadow 0.3s ease;
-								}
+			opacity: 0;
+			transform: translateY(24px) scale(1);
+			transition:
+				opacity 0.6s ease,
+				transform 0.3s cubic-bezier(.2,.7,.2,1),
+				box-shadow 0.3s ease;
+		}
 
-								.flyer.visible {
-								opacity: 1;
-								transform: translateY(0) scale(1);
-								}
+		.flyer.visible {
+			opacity: 1;
+			transform: translateY(0) scale(1);
+		}
 
-								.flyer .frame {
-								display: block;
-								}
+		.flyer .frame {
+			display: block;
+		}
 
-								.flyer img {
-								display: block;
-								width: 100%;
-								height: auto;
-								}
+		.flyer img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
 
-								.flyer .cta {
-								display: block;
-								margin: 10px;
-								padding: 11px 16px;
-								border-radius: 999px;
-								background: rgba(255, 255, 255, 0.08);
-								color: #ffffff;
-								text-align: center;
-								font-size: 0.92rem;
-								font-weight: 600;
-								line-height: 1.2;
-								transition: background 0.25s ease, box-shadow 0.25s ease;
-								}
+		.flyer .cta {
+			display: block;
+			margin: 10px;
+			padding: 11px 16px;
+			border-radius: 999px;
+			background: rgba(255, 255, 255, 0.08);
+			color: #ffffff;
+			text-align: center;
+			font-size: 0.92rem;
+			font-weight: 600;
+			line-height: 1.2;
+			transition: background 0.25s ease, box-shadow 0.25s ease;
+		}
 
-								.flyer.visible:hover,
-								.flyer.visible:focus-visible {
-								transform: translateY(0) scale(1.12);
-								z-index: 10;
-								outline: none;
-								box-shadow:
-								0 0 0 3px rgba(125, 42, 232, 0.9),
-								0 24px 50px rgba(125, 42, 232, 0.35);
-								}
+		.flyer.visible:hover,
+		.flyer.visible:focus-visible {
+			transform: translateY(0) scale(1.12);
+			z-index: 10;
+			outline: none;
+			box-shadow:
+				0 0 0 3px rgba(125, 42, 232, 0.9),
+				0 24px 50px rgba(125, 42, 232, 0.35);
+		}
 
-								.flyer.visible:hover .cta,
-								.flyer.visible:focus-visible .cta {
-								background: var(--brand);
-								box-shadow: 0 6px 16px rgba(125, 42, 232, 0.45);
-								}
+		.flyer.visible:hover .cta,
+		.flyer.visible:focus-visible .cta {
+			background: var(--brand);
+			box-shadow: 0 6px 16px rgba(125, 42, 232, 0.45);
+		}
 
-								.flyer:focus-visible {
-								outline: 3px solid var(--teal);
-								outline-offset: 4px;
-								}
+		.flyer:focus-visible {
+			outline: 3px solid var(--teal);
+			outline-offset: 4px;
+		}
 
-								@media (hover: none) {
-								/* No hover on phones, so keep the button in its bright state */
-								.flyer .cta { background: var(--brand); }
-								}
+		@media (hover: none) {
+			/* No hover on phones, so keep the button in its bright state */
+			.flyer .cta { background: var(--brand); }
+		}
 
-								@media (prefers-reduced-motion: reduce) {
-								html { scroll-behavior: auto; }
-								.flyer { transition: none; opacity: 1; transform: none; }
-								.flyer.visible:hover,
-								.flyer.visible:focus-visible { transform: none; }
-								.flyer .cta { transition: none; }
-								}
+		@media (prefers-reduced-motion: reduce) {
+			html { scroll-behavior: auto; }
+			.flyer { transition: none; opacity: 1; transform: none; }
+			.flyer.visible:hover,
+			.flyer.visible:focus-visible { transform: none; }
+			.flyer .cta { transition: none; }
+		}
 
-								@media (max-width: 520px) {
-								header { padding: 64px 22px 36px; }
-								.flyers { column-width: 160px; column-gap: 16px; }
-								.flyer { margin-bottom: 16px; border-radius: 14px; }
-								.flyer .cta { margin: 8px; padding: 9px 10px; font-size: 0.82rem; }
-								}
-							</style>
-						</head>
-	<body>
+		@media (max-width: 520px) {
+			header { padding: 64px 22px 36px; }
+			.flyers { column-width: 160px; column-gap: 16px; }
+			.flyer { margin-bottom: 16px; border-radius: 14px; }
+			.flyer .cta { margin: 8px; padding: 9px 10px; font-size: 0.82rem; }
+		}
 
-		<header>
-			<h1>Events coming up</h1>
-			<p>Hover over a flyer to see it bigger and click to register.</p>
-		</header>
+		/* Laptop / desktop only: use more of the screen */
+		@media (min-width: 900px) {
+			.flyers {
+				max-width: none;          /* remove the 1200px cap */
+				padding: 20px 4vw 120px;  /* slim side margins that scale with the screen */
+				column-width: auto;
+				column-count: 4;          /* 4 flyers = 4 equal columns across the screen */
+				column-gap: 2.5vw;
+			}
+		}
+	</style>
+</head>
+<body>
 
-		<main class="flyers" id="flyers"></main>
+	<header>
+		<h1>Events coming up</h1>
+		<p>Hover over a flyer to see it bigger and click to register.</p>
+	</header>
 
-		<script>
-			const flyers = [
+	<main class="flyers" id="flyers"></main>
+
+	<script>
+		const flyers = [
 			{ image: "WhatsApp Image 2026-10-24 at 17.49.56.jpeg", url: "https://www.instagram.com/firstlovenotts/", alt: "Flyer for event 3" },
 			{ image: "flyer2.jpeg", url: "https://www.instagram.com/firstlovenotts/", alt: "Flyer for event 2" },
 			{ image: "flyer5.jpeg", url: "https://docs.google.com/forms/d/e/1FAIpQLSfP4t6H7wGjAJXG9LkY2Py5VKFOwzSot4pR5c-GbBDDUSUlOA/viewform?usp=header", alt: "Flyer for event 4" },
 			{ image: "flyer4.jpeg", url: "https://docs.google.com/forms/d/e/1FAIpQLScoaHLZ3pHmjdHT8m01qqbMfGQKtlEGLMmhdy-gXxF7rUbAgQ/viewform", alt: "Flyer for event 4" }
-			];
+		];
 
-			const container = document.getElementById("flyers");
+		const container = document.getElementById("flyers");
 
-			
-			const observer = "IntersectionObserver" in window
+		const observer = "IntersectionObserver" in window
 			? new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-			if (entry.isIntersecting) {
-			entry.target.classList.add("visible");
-			observer.unobserve(entry.target);
-			}
-			});
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add("visible");
+						observer.unobserve(entry.target);
+					}
+				});
 			}, { rootMargin: "0px 0px -8% 0px" })
 			: null;
 
-			flyers.forEach(f => {
+		flyers.forEach(f => {
 			const a = document.createElement("a");
 			a.className = "flyer";
 			a.href = f.url;
-			a.target = "_blank";              
+			a.target = "_blank";
 			a.rel = "noopener noreferrer";
 			a.setAttribute("aria-label", "Register: " + f.alt);
 
@@ -237,8 +247,8 @@
 
 			if (observer) observer.observe(a);
 			else a.classList.add("visible");
-			});
-		</script>
+		});
+	</script>
 
-	</body>
+</body>
 </html>
