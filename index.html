@@ -188,16 +188,65 @@
 				column-gap: 2.5vw;
 			}
 		}
+
+		/* Footer */
+		footer {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 28px 72px;
+			text-align: center;
+		}
+
+		footer::before {
+			content: "";
+			display: block;
+			width: 72px;
+			height: 5px;
+			margin: 0 auto 32px;
+			border-radius: 999px;
+			background: var(--brand);
+		}
+
+		footer p {
+			margin: 0 auto 10px;
+			max-width: 46ch;
+			color: #cfcbe0;
+			font-size: clamp(1rem, 2.4vw, 1.2rem);
+			line-height: 1.6;
+		}
+
+		footer .address {
+			color: var(--muted);
+			font-size: 0.95rem;
+		}
+
+		footer .address a {
+			color: var(--teal);
+			text-decoration: none;
+			border-bottom: 1px solid transparent;
+			transition: border-color 0.25s ease;
+		}
+
+		footer .address a:hover,
+		footer .address a:focus-visible {
+			border-bottom-color: var(--teal);
+			outline: none;
+		}
 	</style>
 </head>
 <body>
 
 	<header>
-		<h1>Events Coming Up</h1>
-		<p>Hover over a flyer to see it bigger and click for more information!</p>
+		<h1>Hey God Encounter Service,</h1>
+		<p>here are your events coming up...</p>
 	</header>
 
 	<main class="flyers" id="flyers"></main>
+
+	<footer>
+		<p>We are back every Sunday at the First Love Church at 2:30pm for the God Encounter Service.</p>
+		<p class="address"><a href="https://www.google.com/maps/search/?api=1&query=1B+Woodthorpe+Rd,+Mapperley,+Nottingham+NG3+5QH" target="_blank" rel="noopener noreferrer">1B Woodthorpe Rd, Mapperley, Nottingham NG3 5QH</a></p>
+	</footer>
 
 	<script>
 		const flyers = [
